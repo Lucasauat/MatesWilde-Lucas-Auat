@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #CF7223, #7D9040);
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+.nav-container{
+    text-align: center;
+    /* background-color: white; */
+    color: white;
+    padding-top: 50px;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.anchor-nav{
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+.logo{
+    width: 4rem;
+}
