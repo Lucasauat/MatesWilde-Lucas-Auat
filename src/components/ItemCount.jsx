@@ -1,4 +1,5 @@
 import {use, useEffect, useState} from 'react'
+import '../css/ItemCount.css'
 
 const ItemCount = () => {
 const[count, setCount] = useState(0)
@@ -10,22 +11,11 @@ const[count, setCount] = useState(0)
         setCount(count - 1)
     }
 
-    useEffect(()=>{
-        console.log('me ejecuto siempre')
-    })
-
-    useEffect(()=>{
-        console.log('se ejecurta una sola vez')
-    },[])
-
-    useEffect(()=>{
-        console.log('se ejecuta cuando cambia, comprar')
-    },[])
     return (
-        <div>
-            <button onClick={restar}>-</button>
+        <div className='count'>
+            <button className="button-counter" onClick={restar} disabled={count === 0}>-</button>
             <span>{count}</span>
-            <button onClick={sumar}>+</button>
+            <button className="button-counter" onClick={sumar}>+</button>
         </div>
     )
 }

@@ -1,17 +1,35 @@
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import "../css/NavBar.css"
 import CartWidget from "./CartWidget"
+import { NavLink } from 'react-router-dom';
 
-const NavBar = () => {
-    return(
-        <nav className='nav-container'>
+function NavBar() {
+  return (
+    <Navbar expand="lg"  bg="white" data-bs-theme="white">
+      <Container>
+        <Navbar.Brand as={NavLink} to='/'> 
             <img alt='logo' src='../logomate.png' className='logo'/>
-            <h1>MatesWilde</h1>
-            <a className='anchor-nav'>Nuevo</a>
-            <a className='anchor-nav'>Mas Vendidos</a>
-            <a className='anchor-nav'>Ofertas</a>
-            <CartWidget/>
-
-        </nav>
-    )
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <span className='title'>MatesWilde</span>
+            <NavDropdown  title="Productos" className='categorias' id="basic-nav-dropdown">
+              <NavDropdown.Item  as={NavLink} to='/categories/nuevos' >Nuevos</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item as={NavLink} to='/categories/mas vendidos'>Mas Vendidos</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item as={NavLink} to='/categories/ofertas'>Ofertas</NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+        <CartWidget/>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
 }
-export default NavBar
+
+export default NavBar;

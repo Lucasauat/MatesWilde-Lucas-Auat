@@ -2,24 +2,32 @@ body {
   margin: 0;
   padding: 0;
   background: linear-gradient(to right, #CF7223, #7D9040);
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+  font-family:'Times New Roman', Times, serif
 }
 .nav-container{
     text-align: center;
-    /* background-color: white; */
     color: white;
     padding-top: 50px;
     font-family: 'Segoe UI', sans-serif;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 2rem;
 }
 .anchor-nav{
-    color: white;
+    color: whitesmoke;
     text-decoration: none;
     cursor: pointer;
     font-weight: bold;
+    text-align: center;
 }
 .logo{
-    width: 4rem;
+    width: 5rem;
+}
+.title{
+    font-size: 30px;
+}
+.categorias{
+    font-size: 20px;
+    padding-left: 1rem;
 }
