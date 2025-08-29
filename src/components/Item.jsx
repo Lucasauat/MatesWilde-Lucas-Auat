@@ -6,7 +6,7 @@ import ItemCount from './ItemCount';
 
 function Item({prod}) {
   return (
-    <Card style={{ width: '15rem', textAlign:'center'}}>
+    <Card  style={{ width: '15rem', textAlign:'center'}}>
       <Card.Img variant="top" src={prod.img} />
       <Card.Body>
         <Card.Title>{prod.name}</Card.Title>

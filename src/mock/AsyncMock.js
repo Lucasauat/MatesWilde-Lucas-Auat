@@ -1,8 +1,8 @@
 const productos = [
     {
         id:'01',
-        name:'Mate 1',
-        description:'lorem lorem',
+        name:'Mate Tradicional',
+        description:'Mate tradicional hecho en madera natural, ideal para quienes valoran la esencia y calidez del mate clásico. Su diseño artesanal ofrece un sabor auténtico y una experiencia tradicional en cada cebada. Resistente y cómodo para el uso diario.',
         category:'nuevos',
         stock:10,
         price:10000,
@@ -10,8 +10,8 @@ const productos = [
     },
     {
         id:'02',
-        name:'Mate 2',
-        description:'lorem lorem',
+        name:'Mate Camionero',
+        description:'Mate estilo camionero de gran capacidad, ideal para quienes disfrutan de cebadas largas. Fabricado con calabaza forrada en cuero, con virola de aluminio decorada. Cómodo, resistente y con excelente terminación artesanal.',
         category:'ofertas',
         stock:7,
         price:1000,
@@ -19,8 +19,8 @@ const productos = [
     },
     {
         id:'03',
-        name:'Mate 3',
-        description:'lorem lorem',
+        name:'Mate Torpedo',
+        description:'Mate torpedo tradicional, de calabaza forrada en cuero con base y virola de aluminio. Su forma robusta y redondeada brinda una excelente estabilidad y una experiencia de cebado cómoda y duradera. Artesanal y de gran estilo.',
         category:'mas vendidos',
         stock:10,
         price:1500,
@@ -28,8 +28,8 @@ const productos = [
     },
     {
         id:'04',
-        name:'Yerba',
-        description:'mas vendidos',
+        name:'Yerba Canarias',
+        description:'Yerba Mate Canarias 1kg. De origen brasilero, reconocida por su sabor intenso y duradero. Elaborada con palo, es la preferida por los consumidores que buscan una mateada fuerte y rendidora. Ideal para los que disfrutan del sabor tradicional y auténtico.',
         category:'nuevos',
         stock:100,
         price:15000,

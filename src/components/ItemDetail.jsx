@@ -1,17 +1,34 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import "../css/ItemDetail.css"
 
 
 const ItemDetail = ({detalle}) => {
   return (
-    <div className="" >
-        <h1>Detalle del producto: {detalle.name}</h1>
-        <img src={detalle.img} alt={detalle.name} className="img-fluid w-25"/>
-        <p className="fst-italic">{detalle.description}</p>
-        <p className="fw-semibold">${detalle.price},00</p>
-        <p className="fw-semibold">Stock disponible: {detalle.stock}</p>
-        <NavLink className='btn btn-warning' to='/'>Volver</NavLink>
+   <>
+  <h1 className="product-heading">Detalle del producto:
+    
+  </h1>
+
+  <div className="product-card">
+    <img src={detalle.img} alt={detalle.name} className="product-image" />
+
+    <div className="product-details">
+      <h2 className="product-title">{detalle.name}</h2>
+      <p className="product-description">{detalle.description}</p>
+      <p className="product-price">${detalle.price},00</p>
+      <p className="product-stock">Stock disponible: {detalle.stock}</p>
+
+      <div className="button-comprar">
+        <button className="btn-buy">🛒 Comprar</button>
+      </div>
+
+      <NavLink className="btn-back" to="/">Volver</NavLink>
     </div>
+  </div>
+</>
+
+
   )
 }
 
