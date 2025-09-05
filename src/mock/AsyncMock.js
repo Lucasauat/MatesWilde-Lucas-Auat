@@ -35,6 +35,42 @@ const productos = [
         price:15000,
         img:'https://i.postimg.cc/Hxzz6VYL/canarias.jpg',
     },
+    {
+        id:'05',
+        name:'Bombilla de Acero con Resorte',
+        description:'Bombilla de acero inoxidable con resorte: práctica y resistente, incluye un sistema de resorte desmontable en la base que facilita la limpieza y asegura una mejor filtración de la yerba. Ideal para quienes buscan comodidad y durabilidad en su mate.',
+        category:'nuevos',
+        stock:10,
+        price:7500,
+        img:'https://i.postimg.cc/cLYTScmG/Bombilla-de-acero-con-resorte-2.jpg',
+    },
+    {
+        id:'06',
+        name:'Mate de cuero Marron Cincelado',
+        description:'Mate de cuero marrón cincelado: artesanal y resistente, recubierto en cuero trabajado a mano con detalles cincelados que le otorgan un estilo único y tradicional. Ideal para quienes buscan un mate auténtico y duradero.',
+        category:'nuevos',
+        stock:10,
+        price:22000,
+        img:'https://i.postimg.cc/s2fJFCHb/Whats-App-Image-2025-06-10-at-19-02-51.jpg',
+    },
+    {
+        id:'07',
+        name:'Bombilla de Aplaca',
+        description:'Bombilla de alpaca elegante y duradera, fabricada en aleación de cobre, níquel y zinc. No se oxida, mantiene el sabor natural del mate y ofrece un diseño tradicional con excelente resistencia.',
+        category:'mas vendidos',
+        stock:18,
+        price:9500,
+        img:'https://i.postimg.cc/QdVSy3BC/bombilla-de-alpaca.png',
+    },
+    {
+        id:'08',
+        name:'Combo de Yerba',
+        description:'Llevate dos clásicos del mate en un solo pack. Yerba Baldo, suave y equilibrada, combinada con Canarias, de sabor intenso y duradero. Ideal para quienes disfrutan de distintos estilos de yerba.',
+        category:'ofertas',
+        stock:15,
+        price:15500,
+        img:'https://i.postimg.cc/9FC0Yd8F/Chat-GPT-Image-2-sept-2025-02-03-04-p-m-1.png',
+    },
 ]
 
 export const getProducts = () => {

@@ -11,7 +11,8 @@ function Item({prod}) {
       <Card.Body>
         <Card.Title>{prod.name}</Card.Title>
         <Card.Text style={{ color:'grey'}}>${prod.price}.00</Card.Text>
-        <Link className='btn btn-outline-primary' to={'/item/'+prod.id}>Ver Mas</Link> <ItemCount/>
+        <Link className='btn btn-outline-primary' to={'/item/'+prod.id}>Ver Mas</Link> 
+        <ItemCount/>
       </Card.Body>
     </Card>
   );

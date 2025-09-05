@@ -6,8 +6,8 @@
   background-color: #f0f0f0;
   border: 1px solid #ccc;
   color: #333;
-  padding: 6px 12px;
-  margin: 0 4px;
+  padding: 9px 12px;
+  margin: 0 1rem;
   border-radius: 4px;
   font-size: 15px;
   cursor: pointer;
@@ -20,7 +20,28 @@
 }
 
 .button-counter:disabled {
-  background-color: #ddd;
+  background-color: red;
   color: #999;
   cursor: not-allowed;
+}
+.button-comprar {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-buy {
+  margin: 5px;
+  margin-top: 2rem;
+  background-color: #3498db;
+  color: white;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-buy:hover {
+  background-color: #2980b9;
 }

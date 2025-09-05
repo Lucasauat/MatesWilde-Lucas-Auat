@@ -2,12 +2,15 @@ import { useEffect, useState } from "react"
 import { getProducts } from "../mock/AsyncMock.js"
 import ItemList from "./ItemList.jsx"
 import { useParams } from "react-router-dom"
+import LoaderComponent from "./LoaderComponent.jsx"
 
 const ItemListContainer = (props) => {
     const [data, setData] = useState ([])
+    const [loader, setLoader] = useState(false)
     const {category}=useParams()
 
     useEffect(()=>{
+        setLoader(true)
         getProducts()
         .then((res)=>{
             if(category){
@@ -17,14 +20,20 @@ const ItemListContainer = (props) => {
             }
         })
         .catch((error)=>console.error(error))
+        .finally(()=>setLoader(false))
     },[category])
 
     
     return(
-        <div>
-            <h1>{props.mensaje} {category && <span style={{textTransform:'capitalize'}}>{category}</span>}</h1>
-            <ItemList data={data}/>
-        </div>
+    < >
+    {loader 
+    ? <LoaderComponent/>
+    :  <div>
+    <h1>{props.mensaje} {category && <span style={{textTransform:'capitalize'}}>{category}</span>}</h1>
+    <ItemList data={data}/>
+    </div>  
+    }   
+    </>
     )
 }
 export default ItemListContainer
