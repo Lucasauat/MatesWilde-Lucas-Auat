@@ -1,21 +1,53 @@
 import React, { useEffect, useState } from 'react'
 import ItemDetail from './ItemDetail'
 import { getItem } from '../mock/AsyncMock'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import LoaderComponent from './LoaderComponent'
+import { db } from '../service/firebase'
+import { doc, getDoc } from 'firebase/firestore'
 
 const ItemDetailContainer = () => {
     const [detalle, setDetalle] = useState({})
     const [cargando, setCargando] = useState(false)
+    const [incorrecto, setIncorrecto] = useState(null)
     const {id} = useParams()
 
+    useEffect(()=>{
+      setCargando(true)
+      const docRef = doc(db, "mates", id)
+      getDoc(docRef)
+      .then((res)=> {
+        if(res.data()){
+          setDetalle({id: res.id, ...res.data()})
+        }else{
+          setIncorrecto(true)
+        }
+      })
+      .catch((error)=> console.error(error))
+      .finally(()=>setCargando(false))
+    },[id])
+
+
+
+   /* PROMESA 
     useEffect(()=>{
       setCargando(true)
     getItem(id)
     .then((res)=> setDetalle(res))
     .catch((error)=> console.log(error))
     .finally(()=>setCargando(false))
-  },[id])  
+  },[id]) 
+  */
+    if(incorrecto){
+      return(
+        <div>
+          <h1>El Mate que buscas, no lo tengoo :/</h1>
+          <Link to='/' className='btn btn-dark'>Ir a casa</Link>
+        </div>
+      )
+    }
+
+   
   return (
     <>
     {
