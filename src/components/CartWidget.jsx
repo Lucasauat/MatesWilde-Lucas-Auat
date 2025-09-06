@@ -4,12 +4,12 @@ import { CartContext } from "../context/CartContext"
 const CartWidget = () => {
 
 
-    const {cart} = useContext(CartContext)
-    console.log(cart,'contexto')
+    const {cart, cartQuantity} = useContext(CartContext)
+  
     return(
         <div>
             <span>🛒</span>
-            <span>85</span>
+            <span>{cartQuantity()}</span>
         </div>
     )
 }

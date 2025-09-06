@@ -7,7 +7,14 @@ export const CartProvider = ({children}) => {
 
     const addItem = (item, qty)=> {
         if(isInCart(item.id)){
-            console.log('ya esta en el carrito')
+            const carritoActualizado = cart.map((prod)=>{
+                if(item.id === prod.id){
+                    return{...prod, quantity: prod.quantity + qty}
+                }else{
+                    return prod
+                }
+            })
+           setCart(carritoActualizado)
         }else{
             setCart([...cart, {...item,quantity:qty}])
         }
@@ -25,8 +32,16 @@ export const CartProvider = ({children}) => {
         return cart.some((prod)=> prod.id === id)
     }
 
+    const cartQuantity = () => {
+        return cart.reduce((acc, prod)=> acc += prod.quantity,0)
+    }
+
+    const total = () => {
+        return cart.reduce((acc, prod)=> acc += (prod.price * prod.quantity),0)
+    }
+
     return(
-        <CartContext.Provider value={{cart, addItem, clear, removeItem}}> 
+        <CartContext.Provider value={{cart, addItem, clear, removeItem, cartQuantity, total}}> 
             {children}
         </CartContext.Provider>
     )
