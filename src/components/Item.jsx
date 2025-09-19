@@ -4,6 +4,12 @@ import { Link } from 'react-router-dom';
 import ItemCount from './ItemCount';
 
 
+
+const onAdd = (cantidad) => {
+    setPurchase(true)
+    addItem(detalle, cantidad)
+  }
+
 function Item({prod}) {
   return (
     <Card  style={{ width: '15rem', textAlign:'center'}}>
@@ -12,7 +18,7 @@ function Item({prod}) {
         <Card.Title>{prod.name}</Card.Title>
         <Card.Text style={{ color:'grey'}}>${prod.price}.00</Card.Text>
         <Link className='btn btn-outline-primary' to={'/item/'+prod.id}>Ver Mas</Link> 
-        <ItemCount/>
+        <ItemCount stock={prod.stock} onAdd={onAdd}/>
       </Card.Body>
     </Card>
   );

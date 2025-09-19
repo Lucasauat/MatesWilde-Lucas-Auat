@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
-import { getProducts } from "../mock/AsyncMock.js"
+import { getProducts, productos } from "../mock/AsyncMock.js"
 import ItemList from "./ItemList.jsx"
 import { useParams } from "react-router-dom"
 import LoaderComponent from "./LoaderComponent.jsx"
-import { collection, getDocs, query, where } from "firebase/firestore"
+import { addDoc, collection, getDocs, query, where } from "firebase/firestore"
 import { db } from "../service/firebase.jsx"
 
 const ItemListContainer = (props) => {
@@ -33,27 +33,9 @@ const ItemListContainer = (props) => {
         .catch((error)=> console.error(error))
         .finally(()=> setLoader(false))
     },[category])
-    
-    
-    /* PROMESA
-    useEffect(()=>{
-        setLoader(true)
-        getProducts()
-        .then((res)=>{
-            if(category){
-                setData(res.filter((item)=> item.category === category))
-            }else{
-                setData(res)
-            }
-        })
-        .catch((error)=>console.error(error))
-        .finally(()=>setLoader(false))
-    },[category])
-*/
 
-    
     return(
-    < >
+    <>
     {loader 
     ? <LoaderComponent/>
     :  <div>

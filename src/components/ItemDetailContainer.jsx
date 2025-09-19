@@ -27,18 +27,6 @@ const ItemDetailContainer = () => {
       .finally(()=>setCargando(false))
     },[id])
 
-
-
-
-   /* PROMESA 
-    useEffect(()=>{
-      setCargando(true)
-    getItem(id)
-    .then((res)=> setDetalle(res))
-    .catch((error)=> console.log(error))
-    .finally(()=>setCargando(false))
-  },[id]) 
-  */
     if(incorrecto){
       return(
         <div>

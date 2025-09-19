@@ -9,7 +9,7 @@ const CartWidget = () => {
     return(
         <div>
             <span>🛒</span>
-            <span>{cartQuantity()}</span>
+            {cart.length > 0 && <span>{cartQuantity()}</span>}
         </div>
     )
 }

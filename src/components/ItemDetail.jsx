@@ -24,7 +24,7 @@ const {addItem}=useContext(CartContext)
         <p className="product-stock">Stock disponible: {detalle.stock}</p>
         <NavLink className="btn-back" to="/">Volver</NavLink>
       </div>
-      {purchase ? <Link to='/cart' className='btn btn-dark'>Ir al carrito</Link> : <ItemCount stock={detalle.stock} onAdd={onAdd}/>}
+      {purchase ? <Link to='/cart' className='btn-buy'>Ir al carrito</Link> : <ItemCount stock={detalle.stock} onAdd={onAdd}/>}
     </div>
 </>
   )
