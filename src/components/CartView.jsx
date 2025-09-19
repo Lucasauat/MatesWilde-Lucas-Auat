@@ -2,10 +2,40 @@ import React, { useContext } from 'react'
 import { CartContext } from '../context/CartContext'
 import "../css/CartView.css"
 import { Link } from 'react-router-dom'
+import toast, { Toaster } from 'react-hot-toast';
 
 
 const CartView = () => {
   const {cart, removeItem, clear, total} = useContext(CartContext)
+const preConfirm = () => {
+  toast((t) => (
+    <span style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+      <b>¿Estás seguro de borrar todo el carrito?</b>
+      <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '10px' }}>
+        <button
+          style={{ backgroundColor: '#dc3545', color: 'white', border: 'none', padding: '5px 10px', borderRadius: '4px' }}
+          onClick={() => {
+            clear();
+            toast.dismiss(t.id); 
+            toast.success("Carrito vaciado");
+          }}
+        >
+          Confirmar
+        </button>
+        <button
+          style={{ backgroundColor: '#6c757d', color: 'white', border: 'none', padding: '5px 10px', borderRadius: '4px' }}
+          onClick={() => toast.dismiss(t.id)}
+        >
+          Cancelar
+        </button>
+      </div>
+    </span>
+  ), {
+    duration: 6000,
+    position: 'top-center',
+  });
+};
+
   return (
    <div className="cart-container">
   <h1>🛒 Tu carrito</h1>
@@ -43,9 +73,10 @@ const CartView = () => {
   </div>
 
   <div className="cart-buttons">
-    <button className="btn-clear" onClick={clear}>Vaciar Carrito</button>
+    <button className="btn-clear" onClick={preConfirm}>Vaciar Carrito</button>
     <Link className="btn-buy" to='/checkout'>Terminar compra</Link>
   </div>
+<Toaster/>
 </div>
   )
 }

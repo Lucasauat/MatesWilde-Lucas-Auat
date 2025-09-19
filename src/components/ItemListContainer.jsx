@@ -13,12 +13,10 @@ const ItemListContainer = (props) => {
 
     useEffect(()=>{
         setLoader(true)
-        // conectar con la collecion
         const productsCollection = category
          ? query(collection(db, "mates"), where("category" , "==", category))
          : collection(db, "mates")
         
-        //los datos AKA documentos
         getDocs(productsCollection)
         .then((res)=>{
            

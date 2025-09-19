@@ -16,7 +16,10 @@ const[count, setCount] = useState(1)
     }
 
     return (
-        <div className='count'>
+       <>
+       {
+        stock > 0 
+        ?  <div className='count'>
             <button className="button-counter" onClick={restar} disabled={count === 0}>-</button>
             <span>{count}</span>
             <button className="button-counter" onClick={sumar}  disabled={count === stock}>+</button>
@@ -24,6 +27,9 @@ const[count, setCount] = useState(1)
                         <button className="btn-buy" disabled={stock === 0 || count === 0} onClick={()=> onAdd(count)}>🛒 Comprar</button>
                 </div>
         </div>
+        : <p>Lo sentimos no hay Stock disponible</p>
+       }
+       </>
         
     )
 }

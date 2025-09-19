@@ -30,7 +30,7 @@ const ItemDetailContainer = () => {
     if(incorrecto){
       return(
         <div>
-          <h1>El Mate que buscas, no lo tengoo :/</h1>
+          <h1 style={{textAlign:'center'}}>El Mate que buscas, no lo tengoo :/</h1>
           <Link to='/' className='btn btn-dark'>Ir a casa</Link>
         </div>
       )
